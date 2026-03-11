@@ -19,14 +19,14 @@ struct DiscoverView: View {
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
             } else if let errorMessage = viewModel.errorMessage, viewModel.wallpapers.isEmpty {
                 WallpaperEmptyStateView(
-                    title: "加载失败",
-                    message: errorMessage,
+                    title: Text("加载失败"),
+                    message: Text(errorMessage),
                     systemImage: "wifi.exclamationmark"
                 )
             } else if viewModel.wallpapers.isEmpty {
                 WallpaperEmptyStateView(
-                    title: "没有找到匹配壁纸",
-                    message: "试试调整方向筛选或换一个关键词。",
+                    title: Text("没有找到匹配壁纸"),
+                    message: Text("试试调整方向筛选或换一个关键词。"),
                     systemImage: "magnifyingglass"
                 )
             } else if usesRegularLayout {

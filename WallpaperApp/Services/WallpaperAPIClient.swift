@@ -8,9 +8,13 @@ actor WallpaperAPIClient {
         var errorDescription: String? {
             switch self {
             case .badResponse:
-                return "服务返回了无效响应。"
+                return NSLocalizedString("服务返回了无效响应。", comment: "API bad response")
             case let .invalidStatusCode(code):
-                return "服务暂时不可用（\(code)）。"
+                return String(
+                    format: NSLocalizedString("服务暂时不可用（%@）。", comment: "API status code error"),
+                    locale: Locale.current,
+                    String(code)
+                )
             }
         }
     }

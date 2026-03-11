@@ -1,15 +1,19 @@
 import SwiftUI
 
 struct WallpaperEmptyStateView: View {
-    let title: String
-    let message: String
+    let title: Text
+    let message: Text
     let systemImage: String
 
     var body: some View {
         ContentUnavailableView {
-            Label(title, systemImage: systemImage)
+            Label {
+                title
+            } icon: {
+                Image(systemName: systemImage)
+            }
         } description: {
-            Text(message)
+            message
         }
         .padding()
     }

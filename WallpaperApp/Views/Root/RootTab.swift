@@ -12,11 +12,11 @@ enum RootTab: String, CaseIterable, Hashable, Identifiable {
     var title: String {
         switch self {
         case .discover:
-            "发现"
+            NSLocalizedString("发现", comment: "Root tab title")
         case .favorites:
-            "收藏"
+            NSLocalizedString("收藏", comment: "Root tab title")
         case .settings:
-            "设置"
+            NSLocalizedString("设置", comment: "Root tab title")
         }
     }
 

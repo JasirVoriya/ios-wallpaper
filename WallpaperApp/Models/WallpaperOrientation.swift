@@ -10,11 +10,11 @@ enum WallpaperOrientation: String, CaseIterable, Codable, Identifiable, Sendable
     var localizedTitle: String {
         switch self {
         case .portrait:
-            return "竖屏"
+            return NSLocalizedString("竖屏", comment: "Wallpaper orientation")
         case .landscape:
-            return "横屏"
+            return NSLocalizedString("横屏", comment: "Wallpaper orientation")
         case .square:
-            return "方形"
+            return NSLocalizedString("方形", comment: "Wallpaper orientation")
         }
     }
 }

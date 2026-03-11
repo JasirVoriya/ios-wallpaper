@@ -9,9 +9,12 @@ struct PhotoLibraryService: Sendable {
         var errorDescription: String? {
             switch self {
             case .permissionDenied:
-                return "没有照片库写入权限，请在系统设置中允许“添加照片”。"
+                return NSLocalizedString(
+                    "没有照片库写入权限，请在系统设置中允许“添加照片”。",
+                    comment: "Photo library permission denied"
+                )
             case .unknown:
-                return "保存失败，请稍后重试。"
+                return NSLocalizedString("保存失败，请稍后重试。", comment: "Photo library save failed")
             }
         }
     }

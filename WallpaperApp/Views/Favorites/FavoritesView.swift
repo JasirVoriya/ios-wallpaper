@@ -12,8 +12,8 @@ struct FavoritesView: View {
         Group {
             if favorites.isEmpty {
                 WallpaperEmptyStateView(
-                    title: "暂无收藏",
-                    message: "在发现页点“收藏”后，这里会自动同步。",
+                    title: Text("暂无收藏"),
+                    message: Text("在发现页点“收藏”后，这里会自动同步。"),
                     systemImage: "heart.slash"
                 )
                 .frame(maxWidth: .infinity, maxHeight: .infinity)

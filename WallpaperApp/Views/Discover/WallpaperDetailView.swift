@@ -215,7 +215,11 @@ struct WallpaperDetailView: View {
         do {
             isFavorite = try FavoriteStore.toggle(wallpaper, in: modelContext)
         } catch {
-            alertMessage = "收藏更新失败：\(error.localizedDescription)"
+            alertMessage = String(
+                format: NSLocalizedString("收藏更新失败：%@", comment: "Favorite toggle failed"),
+                locale: Locale.current,
+                error.localizedDescription
+            )
             isShowingAlert = true
         }
     }
@@ -229,9 +233,16 @@ struct WallpaperDetailView: View {
             let imageData = try await services.apiClient.fetchImageData(from: wallpaper.downloadURL)
             try await services.photoLibraryService.saveImageData(imageData)
             try DownloadHistoryStore.recordDownload(for: wallpaper, in: modelContext)
-            alertMessage = "已保存到照片，你可以在系统相册中设置为墙纸。"
+            alertMessage = NSLocalizedString(
+                "已保存到照片，你可以在系统相册中设置为墙纸。",
+                comment: "Save success message"
+            )
         } catch {
-            alertMessage = "保存失败：\(error.localizedDescription)"
+            alertMessage = String(
+                format: NSLocalizedString("保存失败：%@", comment: "Save failed"),
+                locale: Locale.current,
+                error.localizedDescription
+            )
         }
 
         isShowingAlert = true

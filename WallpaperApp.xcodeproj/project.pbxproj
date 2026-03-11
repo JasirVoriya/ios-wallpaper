@@ -15,6 +15,7 @@
 		2E117A93DDF3789DEA1236F4 /* PadRootSplitScaffold.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0A499D8285047F0ABB1862 /* PadRootSplitScaffold.swift */; };
 		384390A38D67EA78C68D2BC1 /* Wallpaper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD89A2C8C36327C05E256361 /* Wallpaper.swift */; };
 		395985869F7D45780DB25AE0 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A527FDA6B816C5A2C2CCB4 /* SettingsView.swift */; };
+		3C1EE25C913FCF33068D4B7C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B6644C70E902D3361D60ABF8 /* InfoPlist.strings */; };
 		3D0A2619A3C48880573285AA /* WallpaperGridItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389AA08FEC882EA36B699244 /* WallpaperGridItemView.swift */; };
 		3DEFF115D6E6957309704358 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60A9163686824186035778C6 /* Assets.xcassets */; };
 		424315F38557B47F422DF362 /* WallpaperDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078B2553AFFBC06A0CC94FAF /* WallpaperDetailView.swift */; };
@@ -33,6 +34,7 @@
 		9D6E162B39A0C4F2FFD8BE0C /* RegularDiscoverLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD33B39B9D42150A95B2D4A /* RegularDiscoverLayoutView.swift */; };
 		A83DF0ECC27B3C3D63768086 /* FavoriteSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0B3561D71A6005B2F17724 /* FavoriteSnapshot.swift */; };
 		AA65D00A3A87433CCCFE6564 /* WallpaperRecommendation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD4FD73B4DBAD09B8A9BB2E /* WallpaperRecommendation.swift */; };
+		C35FEC6C43E323B88DEEE710 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D1EF1B43EF94BAD21E37624A /* Localizable.strings */; };
 		C5C89BC7EC40A3AD1F6F36F8 /* WallpaperAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895B4AF38FEC770B5270A7F6 /* WallpaperAppApp.swift */; };
 		CC97A04EA097813EF0A76FB5 /* DownloadRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391153E0D56261DBDAFE1D39 /* DownloadRecord.swift */; };
 		D07D8CC325176E1198ACDA96 /* DownloadsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577FE7CE1BD4C35884F03989 /* DownloadsView.swift */; };
@@ -60,30 +62,39 @@
 
 /* Begin PBXFileReference section */
 		078B2553AFFBC06A0CC94FAF /* WallpaperDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperDetailView.swift; sourceTree = "<group>"; };
+		080D21C44CB21D866A7CCD9B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		08185C6E2C19E604BDADB735 /* FavoriteStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteStore.swift; sourceTree = "<group>"; };
 		0B0CEAEED5CD18702D54EA67 /* WallpaperAppTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = WallpaperAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		137181E21BFE083424360DB7 /* AppServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppServices.swift; sourceTree = "<group>"; };
 		186FAAB76AD8C50B1981927D /* DiscoverSelectionPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverSelectionPlaceholderView.swift; sourceTree = "<group>"; };
 		1AD33B39B9D42150A95B2D4A /* RegularDiscoverLayoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegularDiscoverLayoutView.swift; sourceTree = "<group>"; };
+		1AF6988D83BE26DE43115003 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1B62E3692BBDD9AE959F2F9C /* WallpaperRecommendationEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperRecommendationEngineTests.swift; sourceTree = "<group>"; };
 		2486F741C212BEAF003798AF /* PreferencesStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesStore.swift; sourceTree = "<group>"; };
+		272A6C2DC31CE3F3480ECE6C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		2CD4FD73B4DBAD09B8A9BB2E /* WallpaperRecommendation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperRecommendation.swift; sourceTree = "<group>"; };
 		2D9494709D8B5A9E5992E88F /* UserPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreferences.swift; sourceTree = "<group>"; };
+		31C9219C083D0911984D60E3 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		389AA08FEC882EA36B699244 /* WallpaperGridItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperGridItemView.swift; sourceTree = "<group>"; };
 		391153E0D56261DBDAFE1D39 /* DownloadRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadRecord.swift; sourceTree = "<group>"; };
 		3EFA72F8DD30A86C15B72B66 /* WallpaperAppShortcuts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperAppShortcuts.swift; sourceTree = "<group>"; };
+		40591D32490452D4B6D717A1 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		42D8C9CEF855281DDAB0DA41 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		56C656932E276B26EE32A96A /* WallpaperApp.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = WallpaperApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		577FE7CE1BD4C35884F03989 /* DownloadsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadsView.swift; sourceTree = "<group>"; };
 		60A9163686824186035778C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		671BAA4AF21059A500CCD2E3 /* WallpaperOrientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperOrientation.swift; sourceTree = "<group>"; };
 		68A527FDA6B816C5A2C2CCB4 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		696B2F607F1519A90E3EB4D5 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6F0B1C506F8B4CAEDCC16C14 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		766B655D5B2D46165BB9E909 /* RootTabContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabContentView.swift; sourceTree = "<group>"; };
 		874E341BEBAD04AB122070F3 /* WallpaperRecommendationEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperRecommendationEngine.swift; sourceTree = "<group>"; };
 		895B4AF38FEC770B5270A7F6 /* WallpaperAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperAppApp.swift; sourceTree = "<group>"; };
+		941015433FA843A1A4FCA5F5 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		975F5DB8D5B2E550BF7E5A14 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A97646D135834116A45AE703 /* WallpaperRecommendationCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperRecommendationCardView.swift; sourceTree = "<group>"; };
 		AF060AA8C4DC9D8C0FE1A53C /* WallpaperAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperAPIClient.swift; sourceTree = "<group>"; };
+		B0BCC6566D4B6AF4BF72636D /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		B6430C4FA4E1DCBAB30CADF5 /* AppIntents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppIntents.framework; path = System/Library/Frameworks/AppIntents.framework; sourceTree = SDKROOT; };
 		BC10D30EF06A198B361C1325 /* WallpaperEmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperEmptyStateView.swift; sourceTree = "<group>"; };
 		BC38C4FDC614708595CCC9BB /* SwiftData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftData.framework; path = System/Library/Frameworks/SwiftData.framework; sourceTree = SDKROOT; };
@@ -96,6 +107,7 @@
 		D57B10AE70DD75501420E80B /* DiscoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverView.swift; sourceTree = "<group>"; };
 		DB72849B29FBDBB257471CDB /* DownloadHistoryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadHistoryStore.swift; sourceTree = "<group>"; };
 		E23BBB786B9C69A8654FC6FF /* DiscoverViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverViewModel.swift; sourceTree = "<group>"; };
+		E6C4380B04182C24472A3431 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E7826EDB019D907CEC1B5967 /* PhotoLibraryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryService.swift; sourceTree = "<group>"; };
 		E7C5BB2AA9E221F21E3850A2 /* OpenWallpaperAppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWallpaperAppIntent.swift; sourceTree = "<group>"; };
 		F8E2F456C5E56955495F91D1 /* RootTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabView.swift; sourceTree = "<group>"; };
@@ -255,6 +267,8 @@
 			isa = PBXGroup;
 			children = (
 				60A9163686824186035778C6 /* Assets.xcassets */,
+				B6644C70E902D3361D60ABF8 /* InfoPlist.strings */,
+				D1EF1B43EF94BAD21E37624A /* Localizable.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -349,6 +363,10 @@
 			knownRegions = (
 				Base,
 				en,
+				ja,
+				ko,
+				"zh-Hans",
+				"zh-Hant",
 			);
 			mainGroup = E45102577C06A4C43E331084;
 			minimizedProjectReferenceProxies = 1;
@@ -369,6 +387,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3DEFF115D6E6957309704358 /* Assets.xcassets in Resources */,
+				3C1EE25C913FCF33068D4B7C /* InfoPlist.strings in Resources */,
+				C35FEC6C43E323B88DEEE710 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,6 +452,33 @@
 			targetProxy = D25F2F73BBA578DCAACF77FD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B6644C70E902D3361D60ABF8 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1AF6988D83BE26DE43115003 /* en */,
+				31C9219C083D0911984D60E3 /* ja */,
+				975F5DB8D5B2E550BF7E5A14 /* ko */,
+				272A6C2DC31CE3F3480ECE6C /* zh-Hans */,
+				40591D32490452D4B6D717A1 /* zh-Hant */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		D1EF1B43EF94BAD21E37624A /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E6C4380B04182C24472A3431 /* en */,
+				941015433FA843A1A4FCA5F5 /* ja */,
+				696B2F607F1519A90E3EB4D5 /* ko */,
+				080D21C44CB21D866A7CCD9B /* zh-Hans */,
+				B0BCC6566D4B6AF4BF72636D /* zh-Hant */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		0184DCBA270D6E0EFDD66A3E /* Release */ = {

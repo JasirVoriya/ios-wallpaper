@@ -32,7 +32,9 @@ actor WallpaperRecommendationEngine {
             return WallpaperRecommendation(
                 wallpaper: evaluation.wallpaper,
                 headline: evaluation.signals[0],
-                detail: detailParts.isEmpty ? "基于本地收藏与方向偏好生成" : detailParts.joined(separator: " · ")
+                detail: detailParts.isEmpty
+                    ? NSLocalizedString("基于本地收藏与方向偏好生成", comment: "Recommendation detail")
+                    : detailParts.joined(separator: " · ")
             )
         }
     }
@@ -76,27 +78,27 @@ actor WallpaperRecommendationEngine {
 
         if favoredIDs.contains(wallpaper.id) {
             total += 120
-            signals.append("你已经收藏过这张图")
+            signals.append(NSLocalizedString("你已经收藏过这张图", comment: "Recommendation reason"))
         }
 
         if favoredAuthors.contains(wallpaper.author.lowercased()) {
             total += 60
-            signals.append("作者与你收藏偏好一致")
+            signals.append(NSLocalizedString("作者与你收藏偏好一致", comment: "Recommendation reason"))
         }
 
         if wallpaper.orientation == preferredOrientation {
             total += 30
-            signals.append("符合你的默认方向偏好")
+            signals.append(NSLocalizedString("符合你的默认方向偏好", comment: "Recommendation reason"))
         }
 
         if favoredOrientations.contains(wallpaper.orientation) {
             total += 20
-            signals.append("与你常收藏的方向一致")
+            signals.append(NSLocalizedString("与你常收藏的方向一致", comment: "Recommendation reason"))
         }
 
         if max(wallpaper.height, wallpaper.width) >= 2200 {
             total += 10
-            supporting.append("高分辨率更适合锁屏与桌面")
+            supporting.append(NSLocalizedString("高分辨率更适合锁屏与桌面", comment: "Recommendation support reason"))
         }
 
         total += max(0, min(wallpaper.height, wallpaper.width) / 200)
