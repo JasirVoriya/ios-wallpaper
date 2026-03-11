@@ -6,6 +6,7 @@ import SwiftData
 @Observable
 final class DiscoverViewModel {
     private(set) var wallpapers: [Wallpaper] = []
+    private(set) var recommendations: [WallpaperRecommendation] = []
     private(set) var isLoading = false
     private(set) var isLoadingMore = false
     private(set) var errorMessage: String?
@@ -38,13 +39,24 @@ final class DiscoverViewModel {
         do {
             let fetched = try await apiClient.fetchWallpapers(page: currentPage, pageSize: pageSize, query: searchText)
             let filtered = filterByOrientation(fetched)
-            wallpapers = try await rankIfNeeded(filtered, preferences: preferences, context: context)
+            let favoriteSnapshots = try favoriteSnapshotsIfNeeded(preferences: preferences, context: context)
+            wallpapers = await rankIfNeeded(
+                filtered,
+                preferences: preferences,
+                favorites: favoriteSnapshots
+            )
+            recommendations = await topRecommendationsIfNeeded(
+                from: wallpapers,
+                preferences: preferences,
+                favorites: favoriteSnapshots
+            )
             canLoadMorePages = fetched.count == pageSize
             hasLoadedOnce = true
         } catch is CancellationError {
             // Ignore cancellation from SwiftUI task lifecycle.
         } catch {
             errorMessage = error.localizedDescription
+            recommendations = []
         }
 
         isLoading = false
@@ -71,12 +83,23 @@ final class DiscoverViewModel {
             currentPage += 1
             let fetched = try await apiClient.fetchWallpapers(page: currentPage, pageSize: pageSize, query: searchText)
             let filtered = filterByOrientation(fetched)
-            let ranked = try await rankIfNeeded(filtered, preferences: preferences, context: context)
+            let favoriteSnapshots = try favoriteSnapshotsIfNeeded(preferences: preferences, context: context)
+            let ranked = await rankIfNeeded(
+                filtered,
+                preferences: preferences,
+                favorites: favoriteSnapshots
+            )
             wallpapers.append(contentsOf: ranked)
+            recommendations = await topRecommendationsIfNeeded(
+                from: wallpapers,
+                preferences: preferences,
+                favorites: favoriteSnapshots
+            )
             canLoadMorePages = fetched.count == pageSize
         } catch is CancellationError {
             // Ignore cancellation from SwiftUI task lifecycle.
         } catch {
+            currentPage = max(1, currentPage - 1)
             errorMessage = error.localizedDescription
         }
     }
@@ -88,17 +111,43 @@ final class DiscoverViewModel {
     private func rankIfNeeded(
         _ items: [Wallpaper],
         preferences: UserPreferences,
-        context: ModelContext
-    ) async throws -> [Wallpaper] {
+        favorites: [FavoriteSnapshot]
+    ) async -> [Wallpaper] {
         guard preferences.enableIntelligentRecommendations else {
             return items
         }
 
-        let snapshots = try FavoriteStore.favoriteSnapshots(in: context)
         return await recommendationEngine.rank(
             items: items,
-            favorites: snapshots,
+            favorites: favorites,
             preferredOrientation: preferences.preferredOrientation
         )
+    }
+
+    private func topRecommendationsIfNeeded(
+        from items: [Wallpaper],
+        preferences: UserPreferences,
+        favorites: [FavoriteSnapshot]
+    ) async -> [WallpaperRecommendation] {
+        guard preferences.enableIntelligentRecommendations else {
+            return []
+        }
+
+        return await recommendationEngine.topRecommendations(
+            items: items,
+            favorites: favorites,
+            preferredOrientation: preferences.preferredOrientation
+        )
+    }
+
+    private func favoriteSnapshotsIfNeeded(
+        preferences: UserPreferences,
+        context: ModelContext
+    ) throws -> [FavoriteSnapshot] {
+        guard preferences.enableIntelligentRecommendations else {
+            return []
+        }
+
+        return try FavoriteStore.favoriteSnapshots(in: context)
     }
 }

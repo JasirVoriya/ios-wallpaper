@@ -3,6 +3,7 @@ import SwiftUI
 
 struct WallpaperDetailView: View {
     let wallpaper: Wallpaper
+    let showsNavigationChrome: Bool
 
     @Environment(\.modelContext) private var modelContext
     @Environment(AppServices.self) private var services
@@ -13,6 +14,30 @@ struct WallpaperDetailView: View {
     @State private var isShowingAlert = false
 
     var body: some View {
+        Group {
+            if showsNavigationChrome {
+                detailBody
+                    .navigationTitle("壁纸详情")
+                    .navigationBarTitleDisplayMode(.inline)
+            } else {
+                detailBody
+            }
+        }
+        .task {
+            await loadFavoriteStatus()
+        }
+        .alert("保存结果", isPresented: $isShowingAlert) {
+        } message: {
+            Text(alertMessage)
+        }
+    }
+
+    init(wallpaper: Wallpaper, showsNavigationChrome: Bool = true) {
+        self.wallpaper = wallpaper
+        self.showsNavigationChrome = showsNavigationChrome
+    }
+
+    private var detailBody: some View {
         GeometryReader { geometry in
             ScrollView {
                 if geometry.size.width >= 720 {
@@ -22,15 +47,6 @@ struct WallpaperDetailView: View {
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
-        }
-        .navigationTitle("壁纸详情")
-        .navigationBarTitleDisplayMode(.inline)
-        .task {
-            await loadFavoriteStatus()
-        }
-        .alert("保存结果", isPresented: $isShowingAlert) {
-        } message: {
-            Text(alertMessage)
         }
     }
 
@@ -46,6 +62,7 @@ struct WallpaperDetailView: View {
             }
 
             detailsSection
+            sourceSection
             setWallpaperTipsSection
         }
         .padding()
@@ -65,6 +82,7 @@ struct WallpaperDetailView: View {
                 }
 
                 detailsSection
+                sourceSection
                 setWallpaperTipsSection
             }
             .frame(maxWidth: 360)
@@ -100,6 +118,7 @@ struct WallpaperDetailView: View {
             Text("信息")
                 .font(.headline)
 
+            LabeledContent("Picsum 编号", value: wallpaper.id)
             LabeledContent("作者", value: wallpaper.author)
             LabeledContent("方向", value: wallpaper.orientation.localizedTitle)
             LabeledContent("分辨率", value: "\(wallpaper.width) × \(wallpaper.height)")
@@ -117,6 +136,26 @@ struct WallpaperDetailView: View {
                 .font(.subheadline)
                 .foregroundStyle(.secondary)
         }
+        .padding()
+        .background(.thinMaterial, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
+    }
+
+    private var sourceSection: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            Text("来源与分享")
+                .font(.headline)
+
+            Link(destination: wallpaper.sourcePageURL) {
+                Label("查看来源页面", systemImage: "safari")
+                    .frame(maxWidth: .infinity, alignment: .leading)
+            }
+
+            ShareLink(item: wallpaper.previewURL) {
+                Label("分享预览图链接", systemImage: "square.and.arrow.up")
+                    .frame(maxWidth: .infinity, alignment: .leading)
+            }
+        }
+        .buttonStyle(.borderless)
         .padding()
         .background(.thinMaterial, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
     }

@@ -5,6 +5,7 @@ struct WallpaperGridItemView: View {
 
     let wallpaper: Wallpaper
     let isFavorite: Bool
+    let isSelected: Bool
 
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
@@ -27,6 +28,10 @@ struct WallpaperGridItemView: View {
             .frame(maxWidth: .infinity)
             .background(.quaternary)
             .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+            .overlay {
+                RoundedRectangle(cornerRadius: 16, style: .continuous)
+                    .stroke(isSelected ? Color.accentColor : .clear, lineWidth: 3)
+            }
             .overlay(alignment: .topTrailing) {
                 if isFavorite {
                     Image(systemName: "heart.fill")

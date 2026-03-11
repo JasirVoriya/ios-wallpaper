@@ -9,6 +9,8 @@ struct DiscoverView: View {
     private var favorites: [FavoriteWallpaper]
 
     @State private var viewModel = DiscoverViewModel()
+    @State private var selectedWallpaper: Wallpaper?
+    @State private var pendingReloadTask: Task<Void, Never>?
 
     var body: some View {
         Group {
@@ -26,6 +28,16 @@ struct DiscoverView: View {
                     title: "没有找到匹配壁纸",
                     message: "试试调整方向筛选或换一个关键词。",
                     systemImage: "magnifyingglass"
+                )
+            } else if usesRegularLayout {
+                RegularDiscoverLayoutView(
+                    wallpapers: viewModel.wallpapers,
+                    recommendations: viewModel.recommendations,
+                    favoriteIDs: favoriteIDs,
+                    isLoadingMore: viewModel.isLoadingMore,
+                    selectedWallpaper: selectedWallpaper,
+                    onSelect: selectWallpaper,
+                    onLoadNextPageIfNeeded: loadNextPageIfNeeded
                 )
             } else {
                 wallpaperGrid
@@ -60,31 +72,39 @@ struct DiscoverView: View {
         .onChange(of: viewModel.selectedOrientation) { _, _ in
             queueReload()
         }
+        .onChange(of: viewModel.wallpapers) { _, _ in
+            syncSelection()
+        }
+        .onDisappear {
+            pendingReloadTask?.cancel()
+        }
     }
 
     private var wallpaperGrid: some View {
         ScrollView {
-            LazyVGrid(
-                columns: [
-                    GridItem(.adaptive(minimum: gridMinimumWidth, maximum: 320), spacing: gridSpacing, alignment: .top)
-                ],
-                spacing: gridSpacing
-            ) {
-                ForEach(viewModel.wallpapers) { wallpaper in
-                    NavigationLink(value: wallpaper) {
-                        WallpaperGridItemView(
-                            wallpaper: wallpaper,
-                            isFavorite: favoriteIDs.contains(wallpaper.id)
-                        )
-                    }
-                    .buttonStyle(.plain)
-                    .task {
-                        let preferences = PreferencesStore.ensureDefault(in: modelContext)
-                        await viewModel.loadNextPageIfNeeded(
-                            for: wallpaper,
-                            context: modelContext,
-                            preferences: preferences
-                        )
+            VStack(alignment: .leading, spacing: 20) {
+                if viewModel.recommendations.isEmpty == false {
+                    recommendedSection
+                }
+
+                LazyVGrid(
+                    columns: [
+                        GridItem(.adaptive(minimum: gridMinimumWidth, maximum: 320), spacing: gridSpacing, alignment: .top)
+                    ],
+                    spacing: gridSpacing
+                ) {
+                    ForEach(viewModel.wallpapers) { wallpaper in
+                        NavigationLink(value: wallpaper) {
+                            WallpaperGridItemView(
+                                wallpaper: wallpaper,
+                                isFavorite: favoriteIDs.contains(wallpaper.id),
+                                isSelected: false
+                            )
+                        }
+                        .buttonStyle(.plain)
+                        .task {
+                            await loadNextPageIfNeeded(wallpaper)
+                        }
                     }
                 }
             }
@@ -95,6 +115,33 @@ struct DiscoverView: View {
                 ProgressView()
                     .padding(.bottom, 20)
                     .accessibilityLabel("加载更多壁纸")
+            }
+        }
+    }
+
+    private var recommendedSection: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            VStack(alignment: .leading, spacing: 4) {
+                Text("为你推荐")
+                    .font(.title3.weight(.semibold))
+                Text("依据你的本地收藏、默认方向偏好和分辨率信号生成。")
+                    .font(.footnote)
+                    .foregroundStyle(.secondary)
+            }
+
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 14) {
+                    ForEach(viewModel.recommendations) { recommendation in
+                        NavigationLink(value: recommendation.wallpaper) {
+                            WallpaperRecommendationCardView(
+                                recommendation: recommendation,
+                                isSelected: false
+                            )
+                        }
+                        .buttonStyle(.plain)
+                    }
+                }
+                .padding(.vertical, 2)
             }
         }
     }
@@ -129,11 +176,38 @@ struct DiscoverView: View {
     private func reloadWallpapers() async {
         let preferences = PreferencesStore.ensureDefault(in: modelContext)
         await viewModel.loadInitial(using: modelContext, preferences: preferences)
+        syncSelection()
     }
 
     private func queueReload() {
-        Task { @MainActor in
+        pendingReloadTask?.cancel()
+        pendingReloadTask = Task { @MainActor in
             await reloadWallpapers()
+        }
+    }
+
+    private func loadNextPageIfNeeded(_ wallpaper: Wallpaper) async {
+        let preferences = PreferencesStore.ensureDefault(in: modelContext)
+        await viewModel.loadNextPageIfNeeded(
+            for: wallpaper,
+            context: modelContext,
+            preferences: preferences
+        )
+    }
+
+    private func selectWallpaper(_ wallpaper: Wallpaper) {
+        selectedWallpaper = wallpaper
+    }
+
+    private func syncSelection() {
+        guard usesRegularLayout else {
+            return
+        }
+
+        if let currentSelection = selectedWallpaper {
+            selectedWallpaper = viewModel.wallpapers.first(where: { $0.id == currentSelection.id })
+        } else {
+            selectedWallpaper = viewModel.wallpapers.first
         }
     }
 
@@ -147,6 +221,10 @@ struct DiscoverView: View {
 
     private var gridSpacing: CGFloat {
         horizontalSizeClass == .regular ? 16 : 12
+    }
+
+    private var usesRegularLayout: Bool {
+        horizontalSizeClass == .regular
     }
 }
 

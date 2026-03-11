@@ -71,13 +71,18 @@ struct SettingsView: View {
         Section("数据") {
             LabeledContent("收藏数量", value: "\(favorites.count)")
             LabeledContent("下载次数", value: "\(downloads.count)")
+            NavigationLink {
+                DownloadsView()
+            } label: {
+                LabeledContent("最近下载", value: "\(downloads.count)")
+            }
         }
     }
 
     private var privacySection: some View {
         Section("Apple Intelligence 指南对齐") {
             Text("1. 只在用户明确授权后执行推荐。")
-            Text("2. 保持解释性：推荐依据为“收藏作者、方向偏好、分辨率”。")
+            Text("2. 保持解释性：推荐卡片会展示“收藏作者、方向偏好、分辨率”等依据。")
             Text("3. 提供关闭开关并保留基础功能。")
         }
         .font(.footnote)
