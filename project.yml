@@ -1,0 +1,65 @@
+name: WallpaperApp
+options:
+  minimumXcodeGenVersion: 2.45.0
+settings:
+  base:
+    SWIFT_VERSION: 6.2
+    SWIFT_STRICT_CONCURRENCY: complete
+    SDKROOT: auto
+targets:
+  WallpaperApp:
+    type: application
+    platform: iOS
+    deploymentTarget: "26.0"
+    sources:
+      - path: WallpaperApp
+        excludes:
+          - Resources/Info.plist
+    info:
+      path: WallpaperApp/Resources/Info.plist
+      properties:
+        NSPhotoLibraryAddUsageDescription: "保存壁纸到你的照片，方便你在系统照片中手动设置为墙纸。"
+        UILaunchScreen: {}
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+        UISupportedInterfaceOrientations~ipad:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationPortraitUpsideDown
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.voriyajasir.wallpaperapp
+        PRODUCT_NAME: WallpaperApp
+        TARGETED_DEVICE_FAMILY: "1,2"
+        SUPPORTED_PLATFORMS: "iphoneos iphonesimulator"
+        ASSETCATALOG_COMPILER_APPICON_NAME: ""
+        INFOPLIST_FILE: WallpaperApp/Resources/Info.plist
+        GENERATE_INFOPLIST_FILE: NO
+    dependencies:
+      - sdk: SwiftUI.framework
+      - sdk: SwiftData.framework
+      - sdk: Photos.framework
+      - sdk: AppIntents.framework
+  WallpaperAppTests:
+    type: bundle.unit-test
+    platform: iOS
+    deploymentTarget: "26.0"
+    sources:
+      - path: WallpaperAppTests
+    dependencies:
+      - target: WallpaperApp
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.voriyajasir.wallpaperapp.tests
+        SUPPORTED_PLATFORMS: "iphoneos iphonesimulator"
+        GENERATE_INFOPLIST_FILE: YES
+schemes:
+  WallpaperApp:
+    build:
+      targets:
+        WallpaperApp: all
+    run:
+      config: Debug

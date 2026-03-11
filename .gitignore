@@ -1,0 +1,14 @@
+.DS_Store
+
+.codex-artifacts/
+build/
+DerivedData/
+
+*.xcuserstate
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+
+xcuserdata/
+*.xccheckout
+*.xcscmblueprint

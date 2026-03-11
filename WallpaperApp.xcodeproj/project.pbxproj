@@ -1,0 +1,647 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0634C485DEFF8129631EDEB3 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9C80EA8E9F997EE7ABEF09D /* Photos.framework */; };
+		1B03BD430EC45F46207D3355 /* RootTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE098894AEA9DC8C4C623281 /* RootTab.swift */; };
+		1C0D9764B845F8F288FB66C0 /* RootTabContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766B655D5B2D46165BB9E909 /* RootTabContentView.swift */; };
+		1CDD9219229A84F5B8D1874D /* AppServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137181E21BFE083424360DB7 /* AppServices.swift */; };
+		1FC9C1EAC19A1C280472830C /* UserPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9494709D8B5A9E5992E88F /* UserPreferences.swift */; };
+		2E117A93DDF3789DEA1236F4 /* PadRootSplitScaffold.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0A499D8285047F0ABB1862 /* PadRootSplitScaffold.swift */; };
+		384390A38D67EA78C68D2BC1 /* Wallpaper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD89A2C8C36327C05E256361 /* Wallpaper.swift */; };
+		395985869F7D45780DB25AE0 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A527FDA6B816C5A2C2CCB4 /* SettingsView.swift */; };
+		3D0A2619A3C48880573285AA /* WallpaperGridItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389AA08FEC882EA36B699244 /* WallpaperGridItemView.swift */; };
+		3DEFF115D6E6957309704358 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60A9163686824186035778C6 /* Assets.xcassets */; };
+		424315F38557B47F422DF362 /* WallpaperDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078B2553AFFBC06A0CC94FAF /* WallpaperDetailView.swift */; };
+		45E98565C2A06A62A501F4CF /* DiscoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57B10AE70DD75501420E80B /* DiscoverView.swift */; };
+		4DD45909339FFB175C162F90 /* WallpaperEmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC10D30EF06A198B361C1325 /* WallpaperEmptyStateView.swift */; };
+		50452571AF467822CBCAA52F /* PhoneRootTabScaffold.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8EF7ECBBD43B0768DE0C4C /* PhoneRootTabScaffold.swift */; };
+		50B5A8F648DD7D969145772C /* DiscoverViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23BBB786B9C69A8654FC6FF /* DiscoverViewModel.swift */; };
+		60B22B8DA3AD601103616649 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D8C9CEF855281DDAB0DA41 /* FavoritesView.swift */; };
+		69BA9B0A5BB7026B3CEDBDEA /* SwiftData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC38C4FDC614708595CCC9BB /* SwiftData.framework */; };
+		741F2218F0A4EF171F3A18D8 /* DownloadHistoryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB72849B29FBDBB257471CDB /* DownloadHistoryStore.swift */; };
+		783DC39CF8D42E9A261CE59C /* WallpaperAppShortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFA72F8DD30A86C15B72B66 /* WallpaperAppShortcuts.swift */; };
+		8695862E0ABE170BB1744A3D /* PreferencesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2486F741C212BEAF003798AF /* PreferencesStore.swift */; };
+		8CB31B35A591F91FEB250F47 /* PhotoLibraryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7826EDB019D907CEC1B5967 /* PhotoLibraryService.swift */; };
+		8E44AE86BD84FF55AF8E7577 /* OpenWallpaperAppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C5BB2AA9E221F21E3850A2 /* OpenWallpaperAppIntent.swift */; };
+		90DD9A204D55730DF3C905F4 /* WallpaperRecommendationEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874E341BEBAD04AB122070F3 /* WallpaperRecommendationEngine.swift */; };
+		A83DF0ECC27B3C3D63768086 /* FavoriteSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0B3561D71A6005B2F17724 /* FavoriteSnapshot.swift */; };
+		C5C89BC7EC40A3AD1F6F36F8 /* WallpaperAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895B4AF38FEC770B5270A7F6 /* WallpaperAppApp.swift */; };
+		CC97A04EA097813EF0A76FB5 /* DownloadRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391153E0D56261DBDAFE1D39 /* DownloadRecord.swift */; };
+		DC3406874F71403F5A297810 /* WallpaperOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671BAA4AF21059A500CCD2E3 /* WallpaperOrientation.swift */; };
+		DD862482493B7B36E5CDB741 /* RootTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E2F456C5E56955495F91D1 /* RootTabView.swift */; };
+		DDA3D060D76168DA981FB2D5 /* AppIntents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6430C4FA4E1DCBAB30CADF5 /* AppIntents.framework */; };
+		DE78904F24A2A1243513F9EA /* FavoriteWallpaper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C2F99F66AC680FD2D70473 /* FavoriteWallpaper.swift */; };
+		DFE45D8504E70E39E9C63C8B /* WallpaperRecommendationEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B62E3692BBDD9AE959F2F9C /* WallpaperRecommendationEngineTests.swift */; };
+		E3796D1EDF78D5DB26FE19C1 /* WallpaperAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF060AA8C4DC9D8C0FE1A53C /* WallpaperAPIClient.swift */; };
+		F282C930E8E41C342FC63CBF /* FavoriteStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08185C6E2C19E604BDADB735 /* FavoriteStore.swift */; };
+		FCD8DCD7021496CA1316B234 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F0B1C506F8B4CAEDCC16C14 /* SwiftUI.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D25F2F73BBA578DCAACF77FD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4252CB08D603E3446BF2294C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FC914521C43C2BDAA7B5B4BF;
+			remoteInfo = WallpaperApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		078B2553AFFBC06A0CC94FAF /* WallpaperDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperDetailView.swift; sourceTree = "<group>"; };
+		08185C6E2C19E604BDADB735 /* FavoriteStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteStore.swift; sourceTree = "<group>"; };
+		0B0CEAEED5CD18702D54EA67 /* WallpaperAppTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = WallpaperAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		137181E21BFE083424360DB7 /* AppServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppServices.swift; sourceTree = "<group>"; };
+		1B62E3692BBDD9AE959F2F9C /* WallpaperRecommendationEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperRecommendationEngineTests.swift; sourceTree = "<group>"; };
+		2486F741C212BEAF003798AF /* PreferencesStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesStore.swift; sourceTree = "<group>"; };
+		2D9494709D8B5A9E5992E88F /* UserPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreferences.swift; sourceTree = "<group>"; };
+		389AA08FEC882EA36B699244 /* WallpaperGridItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperGridItemView.swift; sourceTree = "<group>"; };
+		391153E0D56261DBDAFE1D39 /* DownloadRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadRecord.swift; sourceTree = "<group>"; };
+		3EFA72F8DD30A86C15B72B66 /* WallpaperAppShortcuts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperAppShortcuts.swift; sourceTree = "<group>"; };
+		42D8C9CEF855281DDAB0DA41 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
+		56C656932E276B26EE32A96A /* WallpaperApp.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = WallpaperApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		60A9163686824186035778C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		671BAA4AF21059A500CCD2E3 /* WallpaperOrientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperOrientation.swift; sourceTree = "<group>"; };
+		68A527FDA6B816C5A2C2CCB4 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		6F0B1C506F8B4CAEDCC16C14 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		766B655D5B2D46165BB9E909 /* RootTabContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabContentView.swift; sourceTree = "<group>"; };
+		874E341BEBAD04AB122070F3 /* WallpaperRecommendationEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperRecommendationEngine.swift; sourceTree = "<group>"; };
+		895B4AF38FEC770B5270A7F6 /* WallpaperAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperAppApp.swift; sourceTree = "<group>"; };
+		AF060AA8C4DC9D8C0FE1A53C /* WallpaperAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperAPIClient.swift; sourceTree = "<group>"; };
+		B6430C4FA4E1DCBAB30CADF5 /* AppIntents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppIntents.framework; path = System/Library/Frameworks/AppIntents.framework; sourceTree = SDKROOT; };
+		BC10D30EF06A198B361C1325 /* WallpaperEmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperEmptyStateView.swift; sourceTree = "<group>"; };
+		BC38C4FDC614708595CCC9BB /* SwiftData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftData.framework; path = System/Library/Frameworks/SwiftData.framework; sourceTree = SDKROOT; };
+		BC8EF7ECBBD43B0768DE0C4C /* PhoneRootTabScaffold.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneRootTabScaffold.swift; sourceTree = "<group>"; };
+		BE0A499D8285047F0ABB1862 /* PadRootSplitScaffold.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PadRootSplitScaffold.swift; sourceTree = "<group>"; };
+		C1C2F99F66AC680FD2D70473 /* FavoriteWallpaper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteWallpaper.swift; sourceTree = "<group>"; };
+		C9C80EA8E9F997EE7ABEF09D /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		CB0B3561D71A6005B2F17724 /* FavoriteSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteSnapshot.swift; sourceTree = "<group>"; };
+		CE098894AEA9DC8C4C623281 /* RootTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTab.swift; sourceTree = "<group>"; };
+		D57B10AE70DD75501420E80B /* DiscoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverView.swift; sourceTree = "<group>"; };
+		DB72849B29FBDBB257471CDB /* DownloadHistoryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadHistoryStore.swift; sourceTree = "<group>"; };
+		E23BBB786B9C69A8654FC6FF /* DiscoverViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverViewModel.swift; sourceTree = "<group>"; };
+		E7826EDB019D907CEC1B5967 /* PhotoLibraryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryService.swift; sourceTree = "<group>"; };
+		E7C5BB2AA9E221F21E3850A2 /* OpenWallpaperAppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWallpaperAppIntent.swift; sourceTree = "<group>"; };
+		F8E2F456C5E56955495F91D1 /* RootTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabView.swift; sourceTree = "<group>"; };
+		FD89A2C8C36327C05E256361 /* Wallpaper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallpaper.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		60C6F4EC749AD7554CFBC242 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCD8DCD7021496CA1316B234 /* SwiftUI.framework in Frameworks */,
+				69BA9B0A5BB7026B3CEDBDEA /* SwiftData.framework in Frameworks */,
+				0634C485DEFF8129631EDEB3 /* Photos.framework in Frameworks */,
+				DDA3D060D76168DA981FB2D5 /* AppIntents.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0104F894F17F679B19D41E9A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				DB72849B29FBDBB257471CDB /* DownloadHistoryStore.swift */,
+				08185C6E2C19E604BDADB735 /* FavoriteStore.swift */,
+				E7826EDB019D907CEC1B5967 /* PhotoLibraryService.swift */,
+				2486F741C212BEAF003798AF /* PreferencesStore.swift */,
+				AF060AA8C4DC9D8C0FE1A53C /* WallpaperAPIClient.swift */,
+				874E341BEBAD04AB122070F3 /* WallpaperRecommendationEngine.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		07BDD3FA969847B0AF73C3F9 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				E23BBB786B9C69A8654FC6FF /* DiscoverViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		162565F71E2DC3B2AA7B0A81 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B6430C4FA4E1DCBAB30CADF5 /* AppIntents.framework */,
+				C9C80EA8E9F997EE7ABEF09D /* Photos.framework */,
+				BC38C4FDC614708595CCC9BB /* SwiftData.framework */,
+				6F0B1C506F8B4CAEDCC16C14 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1B28D1A568DB12564436C9DD /* Discover */ = {
+			isa = PBXGroup;
+			children = (
+				D57B10AE70DD75501420E80B /* DiscoverView.swift */,
+				078B2553AFFBC06A0CC94FAF /* WallpaperDetailView.swift */,
+				389AA08FEC882EA36B699244 /* WallpaperGridItemView.swift */,
+			);
+			path = Discover;
+			sourceTree = "<group>";
+		};
+		39B14DBE5508D237D609B045 /* AppIntents */ = {
+			isa = PBXGroup;
+			children = (
+				E7C5BB2AA9E221F21E3850A2 /* OpenWallpaperAppIntent.swift */,
+				3EFA72F8DD30A86C15B72B66 /* WallpaperAppShortcuts.swift */,
+			);
+			path = AppIntents;
+			sourceTree = "<group>";
+		};
+		69BD00FB90987FFA409EB009 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				391153E0D56261DBDAFE1D39 /* DownloadRecord.swift */,
+				CB0B3561D71A6005B2F17724 /* FavoriteSnapshot.swift */,
+				C1C2F99F66AC680FD2D70473 /* FavoriteWallpaper.swift */,
+				2D9494709D8B5A9E5992E88F /* UserPreferences.swift */,
+				FD89A2C8C36327C05E256361 /* Wallpaper.swift */,
+				671BAA4AF21059A500CCD2E3 /* WallpaperOrientation.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		6B43EA6FA6F06213AE50F5DE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1B28D1A568DB12564436C9DD /* Discover */,
+				945482F04569BF1D0EF933F2 /* Favorites */,
+				C89654FDF5071DD29AFC0B71 /* Root */,
+				9DC488F900534E1891084C98 /* Settings */,
+				789A14DF63AFA8E27ED57FBA /* Shared */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		789A14DF63AFA8E27ED57FBA /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				BC10D30EF06A198B361C1325 /* WallpaperEmptyStateView.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		945482F04569BF1D0EF933F2 /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				42D8C9CEF855281DDAB0DA41 /* FavoritesView.swift */,
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
+		9DC488F900534E1891084C98 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				68A527FDA6B816C5A2C2CCB4 /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		A285EB0A1195AF8A89695915 /* WallpaperAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				1B62E3692BBDD9AE959F2F9C /* WallpaperRecommendationEngineTests.swift */,
+			);
+			path = WallpaperAppTests;
+			sourceTree = "<group>";
+		};
+		C89654FDF5071DD29AFC0B71 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				BE0A499D8285047F0ABB1862 /* PadRootSplitScaffold.swift */,
+				BC8EF7ECBBD43B0768DE0C4C /* PhoneRootTabScaffold.swift */,
+				CE098894AEA9DC8C4C623281 /* RootTab.swift */,
+				766B655D5B2D46165BB9E909 /* RootTabContentView.swift */,
+				F8E2F456C5E56955495F91D1 /* RootTabView.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		D4DB021D9F60D16EB5CB2724 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				56C656932E276B26EE32A96A /* WallpaperApp.app */,
+				0B0CEAEED5CD18702D54EA67 /* WallpaperAppTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DFE7211E290DF85642C9A847 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				60A9163686824186035778C6 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E45102577C06A4C43E331084 = {
+			isa = PBXGroup;
+			children = (
+				F9FFA2B9E0A44B5E4FA6FE29 /* WallpaperApp */,
+				A285EB0A1195AF8A89695915 /* WallpaperAppTests */,
+				162565F71E2DC3B2AA7B0A81 /* Frameworks */,
+				D4DB021D9F60D16EB5CB2724 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E663AECEBD2EBC824AF4364E /* App */ = {
+			isa = PBXGroup;
+			children = (
+				137181E21BFE083424360DB7 /* AppServices.swift */,
+				895B4AF38FEC770B5270A7F6 /* WallpaperAppApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		F9FFA2B9E0A44B5E4FA6FE29 /* WallpaperApp */ = {
+			isa = PBXGroup;
+			children = (
+				E663AECEBD2EBC824AF4364E /* App */,
+				39B14DBE5508D237D609B045 /* AppIntents */,
+				69BD00FB90987FFA409EB009 /* Models */,
+				DFE7211E290DF85642C9A847 /* Resources */,
+				0104F894F17F679B19D41E9A /* Services */,
+				07BDD3FA969847B0AF73C3F9 /* ViewModels */,
+				6B43EA6FA6F06213AE50F5DE /* Views */,
+			);
+			path = WallpaperApp;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9F0B057B7A37AB57ADE7A5DE /* WallpaperAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D1275EF1256862122E8F5DCD /* Build configuration list for PBXNativeTarget "WallpaperAppTests" */;
+			buildPhases = (
+				C20A37F6B4764C7C5C8170C8 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				95C4AF546864F86DF97E8B1A /* PBXTargetDependency */,
+			);
+			name = WallpaperAppTests;
+			packageProductDependencies = (
+			);
+			productName = WallpaperAppTests;
+			productReference = 0B0CEAEED5CD18702D54EA67 /* WallpaperAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FC914521C43C2BDAA7B5B4BF /* WallpaperApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C5F907DEFB3EE6233E694416 /* Build configuration list for PBXNativeTarget "WallpaperApp" */;
+			buildPhases = (
+				012BC6C2E92A62AF85A62BB5 /* Sources */,
+				3CF85CB509A59BE0D9A4FDD9 /* Resources */,
+				60C6F4EC749AD7554CFBC242 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WallpaperApp;
+			packageProductDependencies = (
+			);
+			productName = WallpaperApp;
+			productReference = 56C656932E276B26EE32A96A /* WallpaperApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4252CB08D603E3446BF2294C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+				};
+			};
+			buildConfigurationList = 1B8F1144B445F0BE7DC78C58 /* Build configuration list for PBXProject "WallpaperApp" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = E45102577C06A4C43E331084;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = D4DB021D9F60D16EB5CB2724 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FC914521C43C2BDAA7B5B4BF /* WallpaperApp */,
+				9F0B057B7A37AB57ADE7A5DE /* WallpaperAppTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3CF85CB509A59BE0D9A4FDD9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3DEFF115D6E6957309704358 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		012BC6C2E92A62AF85A62BB5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1CDD9219229A84F5B8D1874D /* AppServices.swift in Sources */,
+				45E98565C2A06A62A501F4CF /* DiscoverView.swift in Sources */,
+				50B5A8F648DD7D969145772C /* DiscoverViewModel.swift in Sources */,
+				741F2218F0A4EF171F3A18D8 /* DownloadHistoryStore.swift in Sources */,
+				CC97A04EA097813EF0A76FB5 /* DownloadRecord.swift in Sources */,
+				A83DF0ECC27B3C3D63768086 /* FavoriteSnapshot.swift in Sources */,
+				F282C930E8E41C342FC63CBF /* FavoriteStore.swift in Sources */,
+				DE78904F24A2A1243513F9EA /* FavoriteWallpaper.swift in Sources */,
+				60B22B8DA3AD601103616649 /* FavoritesView.swift in Sources */,
+				8E44AE86BD84FF55AF8E7577 /* OpenWallpaperAppIntent.swift in Sources */,
+				2E117A93DDF3789DEA1236F4 /* PadRootSplitScaffold.swift in Sources */,
+				50452571AF467822CBCAA52F /* PhoneRootTabScaffold.swift in Sources */,
+				8CB31B35A591F91FEB250F47 /* PhotoLibraryService.swift in Sources */,
+				8695862E0ABE170BB1744A3D /* PreferencesStore.swift in Sources */,
+				1B03BD430EC45F46207D3355 /* RootTab.swift in Sources */,
+				1C0D9764B845F8F288FB66C0 /* RootTabContentView.swift in Sources */,
+				DD862482493B7B36E5CDB741 /* RootTabView.swift in Sources */,
+				395985869F7D45780DB25AE0 /* SettingsView.swift in Sources */,
+				1FC9C1EAC19A1C280472830C /* UserPreferences.swift in Sources */,
+				384390A38D67EA78C68D2BC1 /* Wallpaper.swift in Sources */,
+				E3796D1EDF78D5DB26FE19C1 /* WallpaperAPIClient.swift in Sources */,
+				C5C89BC7EC40A3AD1F6F36F8 /* WallpaperAppApp.swift in Sources */,
+				783DC39CF8D42E9A261CE59C /* WallpaperAppShortcuts.swift in Sources */,
+				424315F38557B47F422DF362 /* WallpaperDetailView.swift in Sources */,
+				4DD45909339FFB175C162F90 /* WallpaperEmptyStateView.swift in Sources */,
+				3D0A2619A3C48880573285AA /* WallpaperGridItemView.swift in Sources */,
+				DC3406874F71403F5A297810 /* WallpaperOrientation.swift in Sources */,
+				90DD9A204D55730DF3C905F4 /* WallpaperRecommendationEngine.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C20A37F6B4764C7C5C8170C8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DFE45D8504E70E39E9C63C8B /* WallpaperRecommendationEngineTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		95C4AF546864F86DF97E8B1A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FC914521C43C2BDAA7B5B4BF /* WallpaperApp */;
+			targetProxy = D25F2F73BBA578DCAACF77FD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0184DCBA270D6E0EFDD66A3E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = WallpaperApp/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.voriyajasir.wallpaperapp;
+				PRODUCT_NAME = WallpaperApp;
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		13B0358650AFD4081183EE57 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = WallpaperApp/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.voriyajasir.wallpaperapp;
+				PRODUCT_NAME = WallpaperApp;
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1C04EFDF63D3493FD6C267C8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.2;
+			};
+			name = Debug;
+		};
+		95ECF04CB90B5B3EA987B255 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.voriyajasir.wallpaperapp.tests;
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WallpaperApp.app/WallpaperApp";
+			};
+			name = Release;
+		};
+		C1E5DA3F0F167595E4A04D4A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.2;
+			};
+			name = Release;
+		};
+		E28E91D3AC897D45A22AF0D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.voriyajasir.wallpaperapp.tests;
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WallpaperApp.app/WallpaperApp";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1B8F1144B445F0BE7DC78C58 /* Build configuration list for PBXProject "WallpaperApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1C04EFDF63D3493FD6C267C8 /* Debug */,
+				C1E5DA3F0F167595E4A04D4A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		C5F907DEFB3EE6233E694416 /* Build configuration list for PBXNativeTarget "WallpaperApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				13B0358650AFD4081183EE57 /* Debug */,
+				0184DCBA270D6E0EFDD66A3E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		D1275EF1256862122E8F5DCD /* Build configuration list for PBXNativeTarget "WallpaperAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E28E91D3AC897D45A22AF0D5 /* Debug */,
+				95ECF04CB90B5B3EA987B255 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4252CB08D603E3446BF2294C /* Project object */;
+}
