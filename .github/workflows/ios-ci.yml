@@ -29,9 +29,15 @@ jobs:
         run: |
           set -euo pipefail
 
-          XCODE_PATH="$(find /Applications -maxdepth 1 -type d -name 'Xcode_26*.app' | sort -V | tail -n 1)"
+          XCODE_PATH="$(
+            find /Applications -maxdepth 1 -type d \
+              -name 'Xcode_26*.app' ! -iname '*beta*' | sort -V | tail -n 1
+          )"
           if [[ -z "${XCODE_PATH}" && -d /Applications/Xcode.app ]]; then
             XCODE_PATH="/Applications/Xcode.app"
+          fi
+          if [[ -z "${XCODE_PATH}" ]]; then
+            XCODE_PATH="$(find /Applications -maxdepth 1 -type d -name 'Xcode_26*.app' | sort -V | tail -n 1)"
           fi
 
           if [[ -z "${XCODE_PATH}" ]]; then
@@ -40,6 +46,7 @@ jobs:
             exit 1
           fi
 
+          echo "Selected Xcode: ${XCODE_PATH}"
           sudo xcode-select -s "${XCODE_PATH}/Contents/Developer"
           xcodebuild -version
 
