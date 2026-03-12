@@ -64,7 +64,7 @@ You must use a recent Apple toolchain because the project currently targets
 iOS 26.0 and Swift 6.2.
 
 - macOS with Xcode 26.3 or later
-- `xcodegen` 2.45.0 or later
+- `xcodegen` 2.44.1 or later
 - An available iOS 26 simulator or a compatible device
 - Network access for wallpaper browsing and image downloads
 

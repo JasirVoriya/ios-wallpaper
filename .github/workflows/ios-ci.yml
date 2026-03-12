@@ -43,24 +43,12 @@ jobs:
           sudo xcode-select -s "${XCODE_PATH}/Contents/Developer"
           xcodebuild -version
 
-      - name: Install XcodeGen
-        shell: bash
-        run: |
-          set -euo pipefail
-
-          if brew list xcodegen >/dev/null 2>&1; then
-            brew upgrade xcodegen
-          else
-            brew install xcodegen
-          fi
-
-          XCODEGEN_BIN="$(brew --prefix xcodegen)/bin/xcodegen"
-          echo "XCODEGEN_BIN=${XCODEGEN_BIN}" >> "$GITHUB_ENV"
-          "${XCODEGEN_BIN}" --version
+      - name: Check XcodeGen version
+        run: xcodegen --version
 
       - name: Generate Xcode project
         run: |
-          "${XCODEGEN_BIN}" generate
+          xcodegen generate
 
       - name: Pick an iPhone simulator
         id: simulator
