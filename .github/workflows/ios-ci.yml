@@ -59,7 +59,8 @@ jobs:
           "${XCODEGEN_BIN}" --version
 
       - name: Generate Xcode project
-        run: "${XCODEGEN_BIN}" generate
+        run: |
+          "${XCODEGEN_BIN}" generate
 
       - name: Pick an iPhone simulator
         id: simulator
