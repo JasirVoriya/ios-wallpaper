@@ -48,23 +48,18 @@ jobs:
         run: |
           set -euo pipefail
 
-          REQUIRED_XCODEGEN_VERSION="2.45.0"
-          INSTALLED_XCODEGEN_VERSION="$(
-            xcodegen --version 2>/dev/null | awk '{ print $2 }' || true
-          )"
-
-          if [[ -z "${INSTALLED_XCODEGEN_VERSION}" ]] || [[ "$(
-            printf '%s\n%s\n' \
-              "${REQUIRED_XCODEGEN_VERSION}" \
-              "${INSTALLED_XCODEGEN_VERSION}" | sort -V | head -n 1
-          )" != "${REQUIRED_XCODEGEN_VERSION}" ]]; then
-            brew upgrade xcodegen || brew install xcodegen
+          if brew list xcodegen >/dev/null 2>&1; then
+            brew upgrade xcodegen
+          else
+            brew install xcodegen
           fi
 
-          xcodegen --version
+          XCODEGEN_BIN="$(brew --prefix xcodegen)/bin/xcodegen"
+          echo "XCODEGEN_BIN=${XCODEGEN_BIN}" >> "$GITHUB_ENV"
+          "${XCODEGEN_BIN}" --version
 
       - name: Generate Xcode project
-        run: xcodegen generate
+        run: "${XCODEGEN_BIN}" generate
 
       - name: Pick an iPhone simulator
         id: simulator
