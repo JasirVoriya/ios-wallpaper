@@ -97,7 +97,7 @@ jobs:
           xcodebuild \
             -project WallpaperApp.xcodeproj \
             -scheme WallpaperApp \
-            -destination 'generic/platform=iOS Simulator' \
+            -destination "id=${{ steps.simulator.outputs.id }}" \
             CODE_SIGNING_ALLOWED=NO \
             build
 
