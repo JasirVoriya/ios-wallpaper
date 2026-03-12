@@ -48,8 +48,17 @@ jobs:
         run: |
           set -euo pipefail
 
-          if ! command -v xcodegen >/dev/null; then
-            brew install xcodegen
+          REQUIRED_XCODEGEN_VERSION="2.45.0"
+          INSTALLED_XCODEGEN_VERSION="$(
+            xcodegen --version 2>/dev/null | awk '{ print $2 }' || true
+          )"
+
+          if [[ -z "${INSTALLED_XCODEGEN_VERSION}" ]] || [[ "$(
+            printf '%s\n%s\n' \
+              "${REQUIRED_XCODEGEN_VERSION}" \
+              "${INSTALLED_XCODEGEN_VERSION}" | sort -V | head -n 1
+          )" != "${REQUIRED_XCODEGEN_VERSION}" ]]; then
+            brew upgrade xcodegen || brew install xcodegen
           fi
 
           xcodegen --version
