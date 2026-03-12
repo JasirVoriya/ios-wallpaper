@@ -1,0 +1,108 @@
+name: iOS CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ios-ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-and-test:
+    name: Build and test
+    runs-on: macos-26
+    timeout-minutes: 30
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Select Xcode 26
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          XCODE_PATH="$(find /Applications -maxdepth 1 -type d -name 'Xcode_26*.app' | sort -V | tail -n 1)"
+          if [[ -z "${XCODE_PATH}" && -d /Applications/Xcode.app ]]; then
+            XCODE_PATH="/Applications/Xcode.app"
+          fi
+
+          if [[ -z "${XCODE_PATH}" ]]; then
+            echo "No Xcode 26 installation was found on the runner."
+            ls -1 /Applications
+            exit 1
+          fi
+
+          sudo xcode-select -s "${XCODE_PATH}/Contents/Developer"
+          xcodebuild -version
+
+      - name: Install XcodeGen
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          if ! command -v xcodegen >/dev/null; then
+            brew install xcodegen
+          fi
+
+          xcodegen --version
+
+      - name: Generate Xcode project
+        run: xcodegen generate
+
+      - name: Pick an iPhone simulator
+        id: simulator
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          DEVICE_JSON="$(xcrun simctl list devices available -j)"
+          SIMULATOR_ID="$(printf '%s' "$DEVICE_JSON" | ruby -rjson -e '
+            data = JSON.parse(STDIN.read)["devices"]
+            candidate = nil
+
+            data.keys
+              .sort
+              .reverse
+              .select { |runtime| runtime.include?("iOS-26") }
+              .each do |runtime|
+                candidate = data[runtime].find do |device|
+                  device["isAvailable"] && device["name"].include?("iPhone")
+                end
+                break if candidate
+              end
+
+            candidate ||= data.values.flatten.find do |device|
+              device["isAvailable"] && device["name"].include?("iPhone")
+            end
+
+            abort "No available iPhone simulator found." unless candidate
+            puts candidate["udid"]
+          ')"
+
+          echo "id=${SIMULATOR_ID}" >> "$GITHUB_OUTPUT"
+
+      - name: Build app
+        run: |
+          xcodebuild \
+            -project WallpaperApp.xcodeproj \
+            -scheme WallpaperApp \
+            -destination 'generic/platform=iOS Simulator' \
+            CODE_SIGNING_ALLOWED=NO \
+            build
+
+      - name: Run tests
+        run: |
+          xcodebuild \
+            -project WallpaperApp.xcodeproj \
+            -scheme WallpaperApp \
+            -destination "id=${{ steps.simulator.outputs.id }}" \
+            CODE_SIGNING_ALLOWED=NO \
+            test

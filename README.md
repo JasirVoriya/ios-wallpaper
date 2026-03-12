@@ -5,6 +5,12 @@ browse remote wallpapers, save favorites, write images to Photos, review recent
 downloads, and see recommendation cards that explain why a wallpaper was ranked
 higher.
 
+[![iOS CI](https://github.com/JasirVoriya/ios-wallpaper/actions/workflows/ios-ci.yml/badge.svg)](https://github.com/JasirVoriya/ios-wallpaper/actions/workflows/ios-ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
+
+![Repository hero showing the wallpaper discovery experience on iPhone and
+iPad](assets/readme/repo-hero.png)
+
 ## Screenshots
 
 This section shows the current product surface. Because no physical iPhone or
@@ -145,6 +151,12 @@ when you evolve the app.
 Use the changelog to separate released work from in-progress updates.
 
 - See [CHANGELOG.md](./CHANGELOG.md) for committed and unreleased changes.
+
+## License
+
+WallpaperApp is available under the [MIT License](./LICENSE). The current
+license keeps the public repository easy to reuse while you continue shipping
+product features.
 
 ## Next steps
 

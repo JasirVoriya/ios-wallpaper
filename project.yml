@@ -61,5 +61,13 @@ schemes:
     build:
       targets:
         WallpaperApp: all
+    test:
+      config: Debug
+      gatherCoverageData: true
+      coverageTargets:
+        - WallpaperApp
+      targets:
+        - name: WallpaperAppTests
+          parallelizable: true
     run:
       config: Debug
