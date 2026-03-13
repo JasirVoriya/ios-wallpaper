@@ -122,7 +122,9 @@ available simulator name from `xcrun simctl list devices`.
 This section gives you a quick map of the repository so you can place new code
 without fighting the existing layout.
 
-- `specs/`: product baseline, roadmap, track specs, and plan templates
+- `.specify/`: Spec-Kit constitution, templates, and helper scripts
+- `.codex/prompts/`: generated `/speckit.*` prompts for Codex
+- `specs/`: product baseline documents, roadmap, and numbered feature specs
 - `WallpaperApp/App`: app entry point and shared service container
 - `WallpaperApp/AppIntents`: Shortcuts and Siri entry points
 - `WallpaperApp/Models`: SwiftData models and shared value types
@@ -136,16 +138,17 @@ without fighting the existing layout.
 
 ## Development workflow
 
-This repository now uses a spec-first workflow for non-trivial product and
-engineering work. New features, architecture changes, and meaningful behavior
-changes must start with a written track spec and implementation plan before
-code begins.
+This repository now uses GitHub Spec-Kit for non-trivial product and engineering
+work. Feature work starts with a numbered spec under `specs/`, guided by the
+constitution in `.specify/memory/constitution.md`.
 
-- Use [CONTRIBUTING.md](./CONTRIBUTING.md) for the required workflow
+- Use [CONTRIBUTING.md](./CONTRIBUTING.md) for the required repository workflow
 - Use [specs/README.md](./specs/README.md) for the spec directory structure
 - Use [specs/foundation/product-spec.md](./specs/foundation/product-spec.md)
   for the current product baseline
-- Use [specs/roadmap.md](./specs/roadmap.md) for current priorities
+- Use [specs/roadmap.md](./specs/roadmap.md) for priorities
+- Use [specs/001-offline-wallpaper-caching/spec.md](./specs/001-offline-wallpaper-caching/spec.md)
+  as the first active Spec-Kit feature example
 
 ## Product notes
 
@@ -177,8 +180,8 @@ product features.
 You can use the current foundation to keep product work moving without a large
 restructure.
 
-1. Add offline image caching so discovery and detail views stay useful on poor
-   networks.
+1. Implement [offline wallpaper caching](./specs/001-offline-wallpaper-caching/spec.md)
+   from the active Spec-Kit feature branch.
 2. Add snapshot or UI tests for the adaptive iPhone and iPad layouts.
 3. Expand the recommendation engine with more explicit user controls and
    feedback signals.

@@ -12,3 +12,9 @@ DerivedData/
 xcuserdata/
 *.xccheckout
 *.xcscmblueprint
+
+# Spec-Kit Codex prompts are committed, but other project-local Codex artifacts
+# may contain transient or private data.
+.codex/*
+!.codex/prompts/
+!.codex/prompts/**
