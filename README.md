@@ -122,6 +122,7 @@ available simulator name from `xcrun simctl list devices`.
 This section gives you a quick map of the repository so you can place new code
 without fighting the existing layout.
 
+- `specs/`: product baseline, roadmap, track specs, and plan templates
 - `WallpaperApp/App`: app entry point and shared service container
 - `WallpaperApp/AppIntents`: Shortcuts and Siri entry points
 - `WallpaperApp/Models`: SwiftData models and shared value types
@@ -132,6 +133,19 @@ without fighting the existing layout.
   adaptive root navigation
 - `WallpaperAppTests`: unit tests
 - `project.yml`: XcodeGen configuration
+
+## Development workflow
+
+This repository now uses a spec-first workflow for non-trivial product and
+engineering work. New features, architecture changes, and meaningful behavior
+changes must start with a written track spec and implementation plan before
+code begins.
+
+- Use [CONTRIBUTING.md](./CONTRIBUTING.md) for the required workflow
+- Use [specs/README.md](./specs/README.md) for the spec directory structure
+- Use [specs/foundation/product-spec.md](./specs/foundation/product-spec.md)
+  for the current product baseline
+- Use [specs/roadmap.md](./specs/roadmap.md) for current priorities
 
 ## Product notes
 
