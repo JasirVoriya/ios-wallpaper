@@ -35,8 +35,10 @@ starts.
 
 - Start with [product-spec.md](./foundation/product-spec.md)
 - Use [roadmap.md](./roadmap.md) to choose or update the active feature
+- Use [002-multiplatform-architecture](./002-multiplatform-architecture/spec.md)
+  as the current active Spec-Kit feature
 - Use [001-offline-wallpaper-caching](./001-offline-wallpaper-caching/spec.md)
-  as the first active Spec-Kit feature example
+  as the adjacent follow-up feature
 
 ## Next steps
 

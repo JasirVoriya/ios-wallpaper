@@ -116,6 +116,8 @@ This section defines what new work must preserve.
 This section records the biggest known gaps so roadmap work stays grounded.
 
 - Offline discovery and image caching are not implemented
+- The project does not yet support macOS despite the product direction toward
+  first-class Apple-platform coverage
 - UI and snapshot test coverage are limited
 - Recommendation controls are still simple and mostly global
 - The app still depends on one external wallpaper source

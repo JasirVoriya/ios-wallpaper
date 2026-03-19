@@ -19,7 +19,8 @@ live.
 
 | Priority | Track | Status | Canonical spec | Why it matters now |
 | --- | --- | --- | --- | --- |
-| P0 | `offline-wallpaper-caching` | `approved` | [`specs/001-offline-wallpaper-caching/spec.md`](./001-offline-wallpaper-caching/spec.md) | The app still depends on live network fetches for discovery and detail use. |
+| P0 | `multiplatform-architecture` | `approved` | [`specs/002-multiplatform-architecture/spec.md`](./002-multiplatform-architecture/spec.md) | Perfect iPhone, iPad, and Mac support needs clear target and module boundaries before more feature work compounds platform debt. |
+| P0 | `offline-wallpaper-caching` | `approved` | [`specs/001-offline-wallpaper-caching/spec.md`](./001-offline-wallpaper-caching/spec.md) | Offline support is still important, but shared-core extraction will reduce rework before caching expands beyond the current iOS target. |
 | P1 | `adaptive-ui-regression-tests` | `proposed` | Not created yet | iPhone and iPad behavior is a core product promise and needs stronger verification. |
 | P1 | `recommendation-controls-and-feedback` | `proposed` | Not created yet | Recommendation logic exists, but the user cannot tune or audit preference signals deeply enough. |
 | P2 | `multi-source-wallpaper-ingestion` | `proposed` | Not created yet | The app depends on a single content source, which limits resilience and curation options. |
@@ -27,9 +28,10 @@ live.
 ## Current active feature
 
 The current active Spec-Kit feature is
-[`001-offline-wallpaper-caching`](./001-offline-wallpaper-caching/spec.md).
-That feature should be the next implementation target unless the roadmap is
-reprioritized.
+[`002-multiplatform-architecture`](./002-multiplatform-architecture/spec.md).
+That feature defines the repository shape required for a first-class iPhone,
+iPad, and macOS product. The offline caching track remains approved and should
+continue on top of the shared-core boundaries introduced here.
 
 ## Next steps
 

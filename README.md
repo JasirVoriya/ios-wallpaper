@@ -147,8 +147,10 @@ constitution in `.specify/memory/constitution.md`.
 - Use [specs/foundation/product-spec.md](./specs/foundation/product-spec.md)
   for the current product baseline
 - Use [specs/roadmap.md](./specs/roadmap.md) for priorities
+- Use [specs/002-multiplatform-architecture/spec.md](./specs/002-multiplatform-architecture/spec.md)
+  as the current active Spec-Kit feature
 - Use [specs/001-offline-wallpaper-caching/spec.md](./specs/001-offline-wallpaper-caching/spec.md)
-  as the first active Spec-Kit feature example
+  as the next follow-up feature
 
 ## Product notes
 
@@ -180,8 +182,10 @@ product features.
 You can use the current foundation to keep product work moving without a large
 restructure.
 
-1. Implement [offline wallpaper caching](./specs/001-offline-wallpaper-caching/spec.md)
-   from the active Spec-Kit feature branch.
-2. Add snapshot or UI tests for the adaptive iPhone and iPad layouts.
-3. Expand the recommendation engine with more explicit user controls and
+1. Implement the shared-core and native-shell plan in
+   [multiplatform architecture](./specs/002-multiplatform-architecture/spec.md).
+2. Continue with [offline wallpaper caching](./specs/001-offline-wallpaper-caching/spec.md)
+   on top of the new architecture boundaries.
+3. Add snapshot or UI tests for the adaptive iPhone and iPad layouts.
+4. Expand the recommendation engine with more explicit user controls and
    feedback signals.
