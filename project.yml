@@ -15,6 +15,8 @@ targets:
       - path: WallpaperApp
         excludes:
           - Resources/Info.plist
+      - path: WallpaperShared
+      - path: WallpaperiOS
     info:
       path: WallpaperApp/Resources/Info.plist
       properties:
@@ -43,6 +45,21 @@ targets:
       - sdk: SwiftData.framework
       - sdk: Photos.framework
       - sdk: AppIntents.framework
+  WallpaperAppMac:
+    type: application
+    platform: macOS
+    deploymentTarget: "26.0"
+    sources:
+      - path: WallpaperShared
+      - path: WallpaperMac
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.voriyajasir.wallpaperapp.mac
+        PRODUCT_NAME: WallpaperAppMac
+        GENERATE_INFOPLIST_FILE: YES
+    dependencies:
+      - sdk: SwiftUI.framework
+      - sdk: SwiftData.framework
   WallpaperAppTests:
     type: bundle.unit-test
     platform: iOS
@@ -56,6 +73,44 @@ targets:
         PRODUCT_BUNDLE_IDENTIFIER: com.voriyajasir.wallpaperapp.tests
         SUPPORTED_PLATFORMS: "iphoneos iphonesimulator"
         GENERATE_INFOPLIST_FILE: YES
+  WallpaperSharedTests:
+    type: bundle.unit-test
+    platform: iOS
+    deploymentTarget: "26.0"
+    sources:
+      - path: WallpaperSharedTests
+    dependencies:
+      - target: WallpaperApp
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.voriyajasir.wallpaperapp.sharedtests
+        SUPPORTED_PLATFORMS: "iphoneos iphonesimulator"
+        GENERATE_INFOPLIST_FILE: YES
+  WallpaperiOSTests:
+    type: bundle.unit-test
+    platform: iOS
+    deploymentTarget: "26.0"
+    sources:
+      - path: WallpaperiOSTests
+    dependencies:
+      - target: WallpaperApp
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.voriyajasir.wallpaperapp.iostests
+        SUPPORTED_PLATFORMS: "iphoneos iphonesimulator"
+        GENERATE_INFOPLIST_FILE: YES
+  WallpaperMacTests:
+    type: bundle.unit-test
+    platform: macOS
+    deploymentTarget: "26.0"
+    sources:
+      - path: WallpaperMacTests
+    dependencies:
+      - target: WallpaperAppMac
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.voriyajasir.wallpaperapp.mactests
+        GENERATE_INFOPLIST_FILE: YES
 schemes:
   WallpaperApp:
     build:
@@ -68,6 +123,24 @@ schemes:
         - WallpaperApp
       targets:
         - name: WallpaperAppTests
+          parallelizable: true
+        - name: WallpaperSharedTests
+          parallelizable: true
+        - name: WallpaperiOSTests
+          parallelizable: true
+    run:
+      config: Debug
+  WallpaperAppMac:
+    build:
+      targets:
+        WallpaperAppMac: all
+    test:
+      config: Debug
+      gatherCoverageData: true
+      coverageTargets:
+        - WallpaperAppMac
+      targets:
+        - name: WallpaperMacTests
           parallelizable: true
     run:
       config: Debug

@@ -1,7 +1,7 @@
 import Foundation
 import Photos
 
-struct PhotoLibraryService: Sendable {
+struct PhotoLibraryService: WallpaperImageSaving, Sendable {
     enum SaveError: LocalizedError {
         case permissionDenied
         case unknown

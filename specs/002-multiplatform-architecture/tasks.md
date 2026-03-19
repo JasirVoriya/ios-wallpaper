@@ -19,11 +19,11 @@ reviewable slices.
 **Purpose**: Establish target, directory, and dependency boundaries before code
 moves.
 
-- [ ] T001 Update `project.yml` to define shared, iOS, and macOS target
+- [x] T001 Update `project.yml` to define shared, iOS, and macOS target
       scaffolding.
-- [ ] T002 Create `WallpaperShared/`, `WallpaperiOS/`, and `WallpaperMac/`
+- [x] T002 Create `WallpaperShared/`, `WallpaperiOS/`, and `WallpaperMac/`
       source roots.
-- [ ] T003 [P] Create shared and platform test target scaffolding in
+- [x] T003 [P] Create shared and platform test target scaffolding in
       `WallpaperSharedTests/`, `WallpaperiOSTests/`, and `WallpaperMacTests/`.
 
 ---

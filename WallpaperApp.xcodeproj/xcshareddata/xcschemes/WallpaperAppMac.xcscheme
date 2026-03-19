@@ -15,9 +15,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FC914521C43C2BDAA7B5B4BF"
-               BuildableName = "WallpaperApp.app"
-               BlueprintName = "WallpaperApp"
+               BlueprintIdentifier = "A56AE1B8BF91978859F6EA4E"
+               BuildableName = "WallpaperAppMac.app"
+               BlueprintName = "WallpaperAppMac"
                ReferencedContainer = "container:WallpaperApp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -33,9 +33,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "FC914521C43C2BDAA7B5B4BF"
-            BuildableName = "WallpaperApp.app"
-            BlueprintName = "WallpaperApp"
+            BlueprintIdentifier = "A56AE1B8BF91978859F6EA4E"
+            BuildableName = "WallpaperAppMac.app"
+            BlueprintName = "WallpaperAppMac"
             ReferencedContainer = "container:WallpaperApp.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -45,31 +45,9 @@
             parallelizable = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9F0B057B7A37AB57ADE7A5DE"
-               BuildableName = "WallpaperAppTests.xctest"
-               BlueprintName = "WallpaperAppTests"
-               ReferencedContainer = "container:WallpaperApp.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO"
-            parallelizable = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9D56E6C5E7842D41D52A2EBC"
-               BuildableName = "WallpaperSharedTests.xctest"
-               BlueprintName = "WallpaperSharedTests"
-               ReferencedContainer = "container:WallpaperApp.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO"
-            parallelizable = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5FD6EECA55964E0AD0F72536"
-               BuildableName = "WallpaperiOSTests.xctest"
-               BlueprintName = "WallpaperiOSTests"
+               BlueprintIdentifier = "63650ED61B06D285029136C9"
+               BuildableName = "WallpaperMacTests.xctest"
+               BlueprintName = "WallpaperMacTests"
                ReferencedContainer = "container:WallpaperApp.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -79,9 +57,9 @@
       <CodeCoverageTargets>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "FC914521C43C2BDAA7B5B4BF"
-            BuildableName = "WallpaperApp.app"
-            BlueprintName = "WallpaperApp"
+            BlueprintIdentifier = "A56AE1B8BF91978859F6EA4E"
+            BuildableName = "WallpaperAppMac.app"
+            BlueprintName = "WallpaperAppMac"
             ReferencedContainer = "container:WallpaperApp.xcodeproj">
          </BuildableReference>
       </CodeCoverageTargets>
@@ -100,9 +78,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "FC914521C43C2BDAA7B5B4BF"
-            BuildableName = "WallpaperApp.app"
-            BlueprintName = "WallpaperApp"
+            BlueprintIdentifier = "A56AE1B8BF91978859F6EA4E"
+            BuildableName = "WallpaperAppMac.app"
+            BlueprintName = "WallpaperAppMac"
             ReferencedContainer = "container:WallpaperApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -119,9 +97,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "FC914521C43C2BDAA7B5B4BF"
-            BuildableName = "WallpaperApp.app"
-            BlueprintName = "WallpaperApp"
+            BlueprintIdentifier = "A56AE1B8BF91978859F6EA4E"
+            BuildableName = "WallpaperAppMac.app"
+            BlueprintName = "WallpaperAppMac"
             ReferencedContainer = "container:WallpaperApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
